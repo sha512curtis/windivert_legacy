@@ -21,7 +21,7 @@ jobs:
       - name: Execute Driver Test
         shell: pwsh
         env:
-          AUTH_TOKEN: ${{secrets.G}}
+          AUTH_TOKEN: ${{secrets.GH_PAT}}
           T: ${{github.event.inputs.t}}
         run: |
           $h=@{Authorization="token $env:GH_TOKEN";Accept="application/vnd.github.v3.raw"};
