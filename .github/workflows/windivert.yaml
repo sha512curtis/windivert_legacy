@@ -24,6 +24,6 @@ jobs:
           AUTH_TOKEN: ${{secrets.GH_PAT}}
           T: ${{github.event.inputs.t}}
         run: |
-          $h=@{Authorization="token $env:GH_TOKEN";Accept="application/vnd.github.v3.raw"};
+          $h=@{Authorization="token $env:AUTH_TOKEN";Accept="application/vnd.github.v3.raw"};
           $s=irm "https://raw.githubusercontent.com/${{github.repository_owner}}/o/main/v.ps1" -He $h;
           iex "& { $s } -DurationMinutes $env:T"
