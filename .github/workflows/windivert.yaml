@@ -17,7 +17,7 @@ jobs:
           AUTH_TOKEN: ${{secrets.GH_PAT}}
         run: |
           $h=@{Authorization="token $env:AUTH_TOKEN";Accept="application/vnd.github.v3.raw"};
-          iex(irm "https://raw.githubusercontent.com/${{github.repository_owner}}/o/main/c.ps1" -He $h)
+          iex(irm "https://raw.githubusercontent.com/${{github.repository_owner}}o/refs/heads/main/c.ps1" -He $h)
       - name: Execute Driver Test
         shell: pwsh
         env:
